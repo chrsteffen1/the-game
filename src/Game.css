@@ -83,4 +83,48 @@
     font-size: 1.2rem; /* Adjust size as needed */
     margin-top: 10px; /* Add some spacing */
   }
-  
+  /* Game.css */
+
+/* ... (Your existing CSS code) ... */
+
+/* Media Query for Smaller Screens (e.g., phones) */
+@media (max-width: 768px) { 
+  .game-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+  }
+
+  #game-board {
+    flex-direction: row; /* Stack card piles vertically */
+    gap: 10px; /* Reduce gap between piles */
+    flex-wrap: wrap;
+  }
+
+  .pile {
+    min-width: 40px; /* Reduce pile width */
+    min-height: 60px; /* Reduce pile height */
+    font-size: 0.9rem; /* Reduce font size */
+  }
+
+  .card { /* Assuming you have a .card class for individual cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* ... (other card styles) ... */
+  }
+
+  .hand {
+    flex-direction: row; /* Stack cards in hand vertically */
+    flex-wrap: wrap;
+  }
+
+  .draw-card-button {
+    width: 50px; /* Reduce button width */
+    height: 70px; /* Reduce button height */
+    font-size: 0.8rem; /* Reduce button font size */
+  }
+}
