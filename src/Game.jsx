@@ -21,6 +21,7 @@ const Game = () => {
   const [gameHistory, setGameHistory] = useState([]);
   const [noMovesMessage, setNoMovesMessage] = useState('')
   const [invalidMoveMessage, setInvalidMoveMessage] = useState('');
+  const [turn, setTurn] = useState(1)
 
 
   useEffect(() => {
@@ -70,8 +71,11 @@ const Game = () => {
   };
 
   const undoMove = () => {
-    if (gameHistory.length === 0) {
+    if (gameHistory.length === 0 ) {
       return; // Nothing to undo
+    }
+    if (gameHistory[gameHistory.length - 1].turn < turn || (gameHistory[gameHistory.length - 1].turn === turn && cardsPlayedSinceDraw === 0)){
+      return;
     }
     const lastMove = gameHistory.pop(); // Get the last move from history
     const { prevPiles, prevHand, prevCardsPlayedSinceDraw } = lastMove;
@@ -106,6 +110,7 @@ const Game = () => {
     setHand(newHand);
     setDeck([...deck]); 
     setCardsPlayedSinceDraw(0);
+    setTurn(turn + 1)
   };
 
   const canPlayOnPile = (card, pile) => {
@@ -151,6 +156,7 @@ const Game = () => {
           prevPiles: { ...piles },
           prevHand: [...hand],
           prevCardsPlayedSinceDraw: cardsPlayedSinceDraw,
+          turn: turn
         },
       ]);
   
@@ -167,6 +173,7 @@ const Game = () => {
 return (
     <div className="game-container"> {/* Class for centering and background */}
       <h1>The Game - Single Player</h1>
+      <h3>{turn}</h3>
       <div id="game-board"> {/* ID for game board */}
         {/* Ascending Pile 1 */}
         <div className="pile" id="asc-pile-1" onClick={() => playCard('ascPile1')}>
