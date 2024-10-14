@@ -1,13 +1,10 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:2210909346.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:942031062.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:906112795.
-
 import {
  defineConfig } from 'vite';
    import react from '@vitejs/plugin-react';
    import { VitePWA } from 'vite-plugin-pwa';
 
    export default defineConfig({
+    base: '/the-game/',
      plugins: [
        react(),
        VitePWA({
@@ -16,14 +13,14 @@ import {
            globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,gif,svg}'], // Adjust patterns as needed
          },
          manifest: {
-          name: "the-game",
+           name: "the-game",
            short_name: "the-game",
-           start_url: "/",
+           start_url: "/the-game/",
            display: "standalone",
-           theme_color: "#ffffff", // Your theme color
+           theme_color: "#ffffff", 
            background_color: "#ffffff",
            lang: "en",
-           scope: "/"// Your PWA manifest configuration here 
+           scope: "/the-game/"
          },
        }),
      ],
