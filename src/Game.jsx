@@ -173,7 +173,7 @@ const Game = () => {
 return (
     <div className="game-container"> {/* Class for centering and background */}
       <h1>The Game - Single Player</h1>
-      <h3>{turn}</h3>
+      <h3>Turns {turn}</h3>
       <div id="game-board"> {/* ID for game board */}
         {/* Ascending Pile 1 */}
         <div className="pile" id="asc-pile-1" onClick={() => playCard('ascPile1')}>
