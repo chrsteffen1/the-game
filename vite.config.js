@@ -10,6 +10,7 @@ import {
    export default defineConfig({
      plugins: [
        react(),
+       
        VitePWA({
          registerType: 'autoUpdate', 
          workbox: {
@@ -20,4 +21,5 @@ import {
          },
        }),
      ],
+     base: '/the-game/',
    });
