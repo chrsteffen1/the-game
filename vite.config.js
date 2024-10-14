@@ -16,7 +16,14 @@ import {
            globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,gif,svg}'], // Adjust patterns as needed
          },
          manifest: {
-           // Your PWA manifest configuration here 
+          name: "the-game",
+           short_name: "the-game",
+           start_url: "/",
+           display: "standalone",
+           theme_color: "#ffffff", // Your theme color
+           background_color: "#ffffff",
+           lang: "en",
+           scope: "/"// Your PWA manifest configuration here 
          },
        }),
      ],
