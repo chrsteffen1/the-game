@@ -13,15 +13,26 @@ import {
            globPatterns: ['**/*.{js,css,html,png,jpg,jpeg,gif,svg}'], // Adjust patterns as needed
          },
          manifest: {
-           name: "the-game",
-           short_name: "the-game",
-           start_url: "/",
-           display: "standalone",
-           theme_color: "#ffffff", 
-           background_color: "#ffffff",
-           lang: "en",
-           scope: "/"
-         },
+          "name": "The Game",
+          "short_name": "Game",
+          "start_url": "/the-game/",
+          "display": "standalone",
+          "background_color": "#ffffff",
+          "theme_color": "#ffffff",
+          "scope": "/the-game/",
+          "icons": [
+            {
+              "src": "/the-game/icon-192.png",
+              "sizes": "192x192",
+              "type": "image/png"
+            },
+            {
+              "src": "/the-game/icon-512.png",
+              "sizes": "512x512",
+              "type": "image/png"
+            }
+          ]
+        },
        }),
      ],
    });
