@@ -15,12 +15,12 @@ import {
          manifest: {
            name: "the-game",
            short_name: "the-game",
-           start_url: "/the-game/",
+           start_url: "/",
            display: "standalone",
            theme_color: "#ffffff", 
            background_color: "#ffffff",
            lang: "en",
-           scope: "/the-game/"
+           scope: "/"
          },
        }),
      ],
